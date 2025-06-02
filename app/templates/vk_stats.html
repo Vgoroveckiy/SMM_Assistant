@@ -5,15 +5,19 @@
 <table class="table table-bordered">
     <thead>
         <tr>
-            <th>Parameter</th>
-            <th>Value</th>
+            <th>Post ID</th>
+            <th>Date</th>
+            <th>Likes</th>
+            <th>Views</th>
         </tr>
     </thead>
     <tbody>
-        {% for key, value in stats.items() %}
+        {% for post in stats %}
         <tr>
-            <td>{{ key }}</td>
-            <td>{{ value }}</td>
+            <td>{{ post.post_id }}</td>
+            <td>{{ post.date }}</td>
+            <td>{{ post.likes }}</td>
+            <td>{{ post.views }}</td>
         </tr>
         {% endfor %}
     </tbody>

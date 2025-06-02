@@ -76,15 +76,17 @@ def vk_stats():
     user = User.query.get(session["user_id"])
 
     vk_stats = VKStats(user.vk_api_id, user.vk_group_id)
-    followers_count = vk_stats.get_followers()
-    likes_and_views = vk_stats.get_likes_and_views(count=5)
+    posts_stats = vk_stats.get_likes_and_views(count=5)
 
-    stats = {
-        "Followers": followers_count,
-        "Likes": likes_and_views[0]["likes"],
-        "Views": likes_and_views[0]["views"],
-        "Comments": "N/A",
-        "Shares": "N/A",
-    }
+    stats = []
+    for post in posts_stats:
+        stats.append(
+            {
+                "post_id": post["post_id"],
+                "date": post["date"],
+                "likes": post["likes"],
+                "views": post["views"],
+            }
+        )
 
     return render_template("vk_stats.html", stats=stats)
