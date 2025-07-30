@@ -1,0 +1,55 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/27.0.5 Chrome/134.0.6998.205 Electron/35.3.0 Safari/537.36" version="27.0.5">
+  <diagram name="Страница — 1" id="NQZiG0mwDXqRTFCeCyqs">
+    <mxGraphModel dx="1153" dy="746" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="-ihk9w6QzmbnXyfRvNPZ-3" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="40" y="90" width="660" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="-ihk9w6QzmbnXyfRvNPZ-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="-ihk9w6QzmbnXyfRvNPZ-1" target="-ihk9w6QzmbnXyfRvNPZ-4" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-ihk9w6QzmbnXyfRvNPZ-1" value="Заводим пользователя для системы.&amp;nbsp;&lt;div&gt;Персональные настройки для всех интеграций.&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="80" y="120" width="230" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="-ihk9w6QzmbnXyfRvNPZ-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="-ihk9w6QzmbnXyfRvNPZ-4" target="-ihk9w6QzmbnXyfRvNPZ-5" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-ihk9w6QzmbnXyfRvNPZ-4" value="Указываем тему и стиль сообщений" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="414" y="120" width="230" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="-ihk9w6QzmbnXyfRvNPZ-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="-ihk9w6QzmbnXyfRvNPZ-5" target="-ihk9w6QzmbnXyfRvNPZ-6" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-ihk9w6QzmbnXyfRvNPZ-5" value="Передача запросов на генерацию контента" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="80" y="250" width="230" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="-ihk9w6QzmbnXyfRvNPZ-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="-ihk9w6QzmbnXyfRvNPZ-6" target="-ihk9w6QzmbnXyfRvNPZ-8" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-ihk9w6QzmbnXyfRvNPZ-6" value="Публикация результатов в канал соцсети." style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="414" y="250" width="230" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="-ihk9w6QzmbnXyfRvNPZ-7" value="LLM провайдер" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="135" y="420" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-ihk9w6QzmbnXyfRvNPZ-8" value="Платформа VK" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="469" y="420" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-ihk9w6QzmbnXyfRvNPZ-11" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="-ihk9w6QzmbnXyfRvNPZ-7" target="-ihk9w6QzmbnXyfRvNPZ-5" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="410" as="sourcePoint" />
+            <mxPoint x="440" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-ihk9w6QzmbnXyfRvNPZ-12" value="API" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="200" y="380" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-ihk9w6QzmbnXyfRvNPZ-13" value="API" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="540" y="380" width="60" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
