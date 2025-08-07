@@ -10,6 +10,26 @@ auth_bp = Blueprint("auth", __name__)
 
 
 class RegisterForm(FlaskForm):
+    """
+    Форма регистрации пользователей на Flask.
+
+    Форма включает в себя поля для ввода имени пользователя, пароля, подтверждения пароля и кнопки отправки.
+    Также она включает в себя валидацию, чтобы убедиться, что имя пользователя не занято и пароли совпадают.
+
+    Поля:
+        username (StringField): Поле ввода имени пользователя с валидаторами для обязательного ввода и длины (4-100 символов).
+        password (PasswordField): Поле ввода пароля с валидаторами для обязательного ввода и длины (8-80 символов).
+        confirm_password (PasswordField): Поле ввода подтверждения пароля с валидаторами для соответствия паролю.
+        submit (SubmitField): Кнопка отправки формы.
+
+    Методы:
+        validate_username(username): Проверяет, что имя пользователя не занято.
+            Аргументы:
+                username: Поле ввода имени пользователя для проверки.
+            Генерирует исключение:
+                ValidationError: Если имя пользователя уже занято.
+    """
+
     username = StringField(
         "Username", validators=[InputRequired(), Length(min=4, max=100)]
     )
@@ -32,6 +52,15 @@ class RegisterForm(FlaskForm):
 
 
 class LoginForm(FlaskForm):
+    """
+    Форма входа пользователей на Flask.
+
+    Поля:
+        username (StringField): Поле ввода имени пользователя с валидаторами для обязательного ввода и длины (4-100 символов).
+        password (PasswordField): Поле ввода пароля с валидаторами для обязательного ввода и длины (8-80 символов).
+        submit (SubmitField): Кнопка отправки формы.
+    """
+
     username = StringField(
         "Username", validators=[InputRequired(), Length(min=4, max=100)]
     )
@@ -43,6 +72,15 @@ class LoginForm(FlaskForm):
 
 @auth_bp.route("/register", methods=["GET", "POST"])
 def register():
+    """
+    Обрабатывает регистрацию новых пользователей.
+
+    - GET: Отображает страницу регистрации с формой.
+    - POST: Проверяет данные формы, хэширует пароль и сохраняет нового пользователя в базу данных.
+
+    Возвращает:
+        render_template: Страницу с формой регистрации или перенаправление на страницу входа после успешной регистрации.
+    """
     form = RegisterForm()
     if form.validate_on_submit():
         hashed_password = bcrypt.generate_password_hash(form.password.data).decode(
@@ -58,6 +96,15 @@ def register():
 
 @auth_bp.route("/login", methods=["GET", "POST"])
 def login():
+    """
+    Обрабатывает вход существующих пользователей.
+
+    - GET: Отображает страницу входа с формой.
+    - POST: Проверяет данные формы и аутентифицирует пользователя.
+
+    Возвращает:
+        render_template: Страницу с формой входа или перенаправление на панель управления после успешного входа.
+    """
     form = LoginForm()
     if form.validate_on_submit():
         user = User.query.filter_by(username=form.username.data).first()
@@ -72,6 +119,14 @@ def login():
 
 @auth_bp.route("/logout")
 def logout():
+    """
+    Выход из системы.
+
+    Удаляет идентификатор пользователя из сессии и перенаправляет на страницу входа.
+
+    Возвращает:
+        redirect: На страницу входа после выхода.
+    """
     session.pop("user_id", None)
     flash("Logged out successfully.", "success")
     return redirect(url_for("auth.login"))

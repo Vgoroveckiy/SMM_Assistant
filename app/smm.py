@@ -13,6 +13,14 @@ smm_bp = Blueprint("smm", __name__)
 
 @smm_bp.route("/dashboard")
 def dashboard():
+    """
+    Отображает главную страницу приложения (дэшборд).
+
+    Если пользователь не авторизован, перенаправляет на страницу входа.
+
+    Возвращает:
+        render_template: Дэшборд HTML-страница.
+    """
     if "user_id" not in session:
         return redirect(url_for("auth.login"))
     return render_template("dashboard.html")
@@ -20,6 +28,15 @@ def dashboard():
 
 @smm_bp.route("/settings", methods=["GET", "POST"])
 def settings():
+    """
+    Отображает и обрабатывает страницу настроек пользователя.
+
+    - GET: Отображает текущие настройки.
+    - POST: Сохраняет новые значения VK API ID и VK Group ID.
+
+    Возвращает:
+        render_template: Страница настроек или перенаправление при неавторизации.
+    """
     if "user_id" not in session:
         return redirect(url_for("auth.login"))
 
@@ -36,6 +53,15 @@ def settings():
 
 @smm_bp.route("/post-generator", methods=["GET", "POST"])
 def post_generator():
+    """
+    Генерирует пост и изображение при необходимости, и публикует их в VK.
+
+    - GET: Отображает форму генерации поста.
+    - POST: Обрабатывает данные формы, генерирует текст и изображение, публикует пост в VK.
+
+    Возвращает:
+        render_template: Страница генерации поста с результатами или без.
+    """
     if "user_id" not in session:
         return redirect(url_for("auth.login"))
 
@@ -70,6 +96,14 @@ def post_generator():
 
 @smm_bp.route("/vk-stats", methods=["GET"])
 def vk_stats():
+    """
+    Отображает статистику последних постов в группе VK.
+
+    Получает статистику (лайки и просмотры) для последних 5 постов и отображает её.
+
+    Возвращает:
+        render_template: Страница со статистикой постов или перенаправление при неавторизации.
+    """
     if "user_id" not in session:
         return redirect(url_for("auth.login"))
 
